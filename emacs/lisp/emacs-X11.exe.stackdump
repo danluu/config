@@ -1,0 +1,7 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=610202F7
+eax=00AD0000 ebx=61227BAC ecx=76E20D06 edx=002C4118 esi=00000000 edi=0028F9F8
+ebp=61020A10 esp=0028C7C8 program=C:\cygwin\bin\emacs-X11.exe, pid 4044, thread main
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args
+End of stack trace
