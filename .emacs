@@ -9,7 +9,8 @@
 	 (add-to-list 'load-path
 			(concat emacs-root p))))
 	(add-path "emacs/lisp")
-	(add-path "emacs/site-lisp/"))
+	(add-path "emacs/site-lisp/")
+	(add-path "emacs/site-lisp/bluespec"))
 
 
 (if (eq system-type 'cygwin)
@@ -51,3 +52,7 @@
 (when (fboundp 'swiss-move-line-up)     ; Defined in `swiss-move.el'.
   (global-set-key [S-prior] 'swiss-move-line-up)
   (global-set-key [S-next]  'swiss-move-line-down))
+
+;;bluespec
+(autoload 'bsv-mode "bsv-mode" "BSV mode" t )
+(setq auto-mode-alist (cons  '("\\.bsv\\'" . bsv-mode) auto-mode-alist))
