@@ -17,7 +17,7 @@
     (load-library "cygwin-shell")) ;;conflicts with tramp?
 
 ;;tramp setup
-(setq tramp-default-method "scp")
+(setq tramp-default-method "rsync")
 ;;(require 'tramp)
 
 (require 'browse-kill-ring+)
@@ -56,3 +56,10 @@
 ;;bluespec
 (autoload 'bsv-mode "bsv-mode" "BSV mode" t )
 (setq auto-mode-alist (cons  '("\\.bsv\\'" . bsv-mode) auto-mode-alist))
+
+;;org mode
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
