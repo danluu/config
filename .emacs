@@ -1,15 +1,16 @@
 (require 'cl)
 
-(defvar emacs-root (if (or (eq system-type 'cygwin)
-			 (eq system-type 'gnu/linux)
-			 (eq system-type 'linux))
-		       "/home/d/" "c:/home/d/"))
+(defvar emacs-root (if (eq system-type 'cygwin) "/home/d"
+		       (if (or
+			    (eq system-type 'gnu/linux)
+			    (eq system-type 'linux))
+			   "/home/dluu/" "c:/home/d/")))
 		     
 (labels ((add-path (p)
 	 (add-to-list 'load-path
 			(concat emacs-root p))))
 	(add-path "emacs/lisp")
-	(add-path "emacs/site-lisp/")
+	(add-path "emacs/site-lisp")
 	(add-path "emacs/site-lisp/bluespec"))
 
 
