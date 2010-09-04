@@ -1,6 +1,6 @@
 (require 'cl)
 
-(defvar emacs-root (if (eq system-type 'cygwin) "/home/d"
+(defvar emacs-root (if (eq system-type 'cygwin) "/home/d/"
 		       (if (or
 			    (eq system-type 'gnu/linux)
 			    (eq system-type 'linux))
@@ -11,6 +11,8 @@
 			(concat emacs-root p))))
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
+	(add-path "emacs/site-list/scala")
+	(add-path "emacs/site-list/haskell-mode")
 	(add-path "emacs/site-lisp/bluespec"))
 
 
@@ -64,3 +66,18 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
+
+;;misc
+(fset 'yes-or-no-p 'y-or-n-p)
+;; Highlight regions and add special behaviors to regions.
+;; "C-h d transient" for more info
+(setq transient-mark-mode t)
+
+;;scala mode
+(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
+
+;;haskell mode. Need to fix for multi-site support
+(load "~/emacs/site-lisp/haskell-mode/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'font-lock-mode)
