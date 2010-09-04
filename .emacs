@@ -72,6 +72,7 @@
 ;; Highlight regions and add special behaviors to regions.
 ;; "C-h d transient" for more info
 (setq transient-mark-mode t)
+(global-set-key "\M-g" 'goto-line)
 
 ;;scala mode
 (load "~/emacs/site-lisp/scala/scala-mode-auto.el")
@@ -80,4 +81,5 @@
 (load "~/emacs/site-lisp/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-(add-hook 'haskell-mode-hook 'font-lock-mode)(global-set-key "\M-g" 'goto-line)
+(add-hook 'haskell-mode-hook 'font-lock-mode)
+
