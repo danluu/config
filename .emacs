@@ -78,7 +78,7 @@
 (load "~/emacs/site-lisp/scala/scala-mode-auto.el")
 
 ;;haskell mode. Need to fix for multi-site support
-(load "haskell-site-file")
+(load "~/emacs/site-lisp/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'font-lock-mode)
