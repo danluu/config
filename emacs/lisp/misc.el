@@ -10,8 +10,8 @@
 (when (> emacs-major-version 21) (require 'bindings+ nil t)) ; Minor-mode menus in mode line.
 
 (when window-system
-  (autoload 'paren-activate "mic-paren" "" t) ; Turns on alternative paren highlighting.
-  (autoload 'paren-deactivate "mic-paren" "" t) ; Turns it off.
+  (load-library "mic-paren")
+  (paren-activate)
   (autoload 'paren-toggle-matching-paired-delimiter "mic-paren" "" t) ; For LaTeX etc: $...$
   (autoload 'paren-toggle-matching-quoted-paren "mic-paren" "" t) ; Toggle highlighting escaped parens.
   (autoload 'paren-toggle-open-paren-context "mic-paren" "" t)
