@@ -28,3 +28,8 @@
 ;;tramp setup
 (setq tramp-default-method "rsync")
 
+ ;; Don't display the 'Welcome to GNU Emacs' buffer on startup
+(setq inhibit-startup-message t)
+
+;; Don't insert instructions in the *scratch* buffer
+(setq initial-scratch-message nil)
