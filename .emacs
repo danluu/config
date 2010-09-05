@@ -15,33 +15,13 @@
 	(add-path "emacs/site-list/haskell-mode")
 	(add-path "emacs/site-lisp/bluespec"))
 
+(load-library "misc")
 
 (if (eq system-type 'cygwin)
     (load-library "cygwin-shell")) ;;conflicts with tramp?
 
-;;tramp setup
-(setq tramp-default-method "rsync")
 ;;(require 'tramp)
 
-(require 'browse-kill-ring+)
-
-;;get rid of menus
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
-;;stuff from dadam's start.el
-(when (> emacs-major-version 21) (require 'bindings+ nil t)) ; Minor-mode menus in mode line.
-
-(require 'paren)
-
-(when window-system
-  (autoload 'paren-activate "mic-paren" "" t) ; Turns on alternative paren highlighting.
-  (autoload 'paren-deactivate "mic-paren" "" t) ; Turns it off.
-  (autoload 'paren-toggle-matching-paired-delimiter "mic-paren" "" t) ; For LaTeX etc: $...$
-  (autoload 'paren-toggle-matching-quoted-paren "mic-paren" "" t) ; Toggle highlighting escaped parens.
-  (autoload 'paren-toggle-open-paren-context "mic-paren" "" t)
-  (defvar paren-sexp-mode t)
-  (defvar paren-message-linefeed-display "^J")) ; Toggle in/out context for open paren.
 
 ;;hack to get swiss-move to work with GNU emacs
 (unless (featurep 'xemacs)
@@ -67,12 +47,6 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
-;;misc
-(fset 'yes-or-no-p 'y-or-n-p)
-;; Highlight regions and add special behaviors to regions.
-;; "C-h d transient" for more info
-(setq transient-mark-mode t)
-(global-set-key "\M-g" 'goto-line)
 
 ;;scala mode
 (load "~/emacs/site-lisp/scala/scala-mode-auto.el")
