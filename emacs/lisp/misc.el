@@ -33,3 +33,31 @@
 
 ;; Don't insert instructions in the *scratch* buffer
 (setq initial-scratch-message nil)
+
+ ;; C-x b buffer switching
+(iswitchb-mode 1)
+(icomplete-mode 1)
+
+;;backups files
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;;enable generic stuff like fstab mode
+(setq generic-define-unix-modes t)
+
+;;??
+(setq file-name-shadow-mode 1)
+
+;;highlight regexes
+(setq hi-lock-mode 1)
+
+;;When activated, it allows to “undo” (and “redo”) changes in the window configuration with the key commands ‘C-x left’ and ‘C-x right’. In Emacs 22, these keybindings have been changed to ‘C-c left’ and ‘C-c right’.
+(winner-mode)
+
+;;stretch cursor to match character size (tabs!)
+(setq x-stretch-cursor)
+
+;;like iswitchb, but crazier
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t) ;; enable fuzzy matching
