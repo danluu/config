@@ -61,3 +61,15 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
+
+;;mousewheel support
+(if (load "mwheel" t)
+    (mwheel-install))
+
+;;some of our ucode tools blow up if we don't end in a newline
+(setq require-final-newline 't)
+
+;;complain if we search/replace on a read-only buffer
+(defadvice query-replace-read-args (before barf-if-buffer-read-only activate)
+  "Signal a `buffer-read-only' error if the current buffer is read-only."
+  (barf-if-buffer-read-only))
