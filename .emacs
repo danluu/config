@@ -1,5 +1,8 @@
 (require 'cl)
 
+;;debug
+(setq tramp-verbose 10) 
+
 (defvar emacs-root (if (eq system-type 'cygwin) "/home/d/"
 		       (if (or
 			    (eq system-type 'gnu/linux)
