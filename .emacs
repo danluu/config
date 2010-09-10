@@ -1,7 +1,5 @@
 (require 'cl)
 
-;;debug
-(setq tramp-verbose 10) 
 
 (defvar emacs-root (if (eq system-type 'cygwin) "/home/d/"
 		       (if (or
@@ -15,6 +13,7 @@
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
 	(add-path "emacs/site-list/scala")
+	(add-path "emacs/site-list/fsharp")
 	(add-path "emacs/site-list/haskell-mode")
 	(add-path "emacs/site-lisp/bluespec"))
 
@@ -60,3 +59,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'font-lock-mode)
 
+
+;;debug
+(setq tramp-verbose 10) 
