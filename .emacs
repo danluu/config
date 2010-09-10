@@ -12,9 +12,9 @@
 			(concat emacs-root p))))
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
-	(add-path "emacs/site-list/scala")
-	(add-path "emacs/site-list/fsharp")
-	(add-path "emacs/site-list/haskell-mode")
+	(add-path "emacs/site-lisp/scala")
+	(add-path "emacs/site-lisp/fsharp")
+	(add-path "emacs/site-lisp/haskell-mode")
 	(add-path "emacs/site-lisp/bluespec"))
 
 (load-library "misc")
