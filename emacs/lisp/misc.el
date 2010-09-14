@@ -81,3 +81,6 @@
 
 (setq inferior-fsharp-program "fsi")
 (setq fsharp-compiler "fsc")
+
+;; If you are no Emacs-Lisp addict, and would like to use Tuareg NOW, append (or copy) `append-tuareg.el' file to your `.emacs' configuration file. It tells Emacs to load Tuareg and Sym-Lock (for XEmacs) automatically.
+(load-library "append-tuareg")
