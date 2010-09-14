@@ -14,6 +14,7 @@
 	(add-path "emacs/site-lisp")
 	(add-path "emacs/site-lisp/scala")
 	(add-path "emacs/site-lisp/fsharp")
+	(add-path "emacs/site-lisp/tuareg")
 	(add-path "emacs/site-lisp/haskell-mode")
 	(add-path "emacs/site-lisp/bluespec"))
 
