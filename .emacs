@@ -20,8 +20,8 @@
 
 (load-library "misc")
 
-(if (eq system-type 'cygwin)
-    (load-library "cygwin-shell")) ;;conflicts with tramp?
+;;(if (eq system-type 'cygwin)
+;;    (load-library "cygwin-shell")) ;;conflicts with tramp?
 
 ;;(require 'tramp)
 
@@ -60,6 +60,13 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'font-lock-mode)
 
+;;verilog mode
+;; Load verilog mode only when needed
+(autoload 'verilog-mode "verilog-mode" "Verilog mode" t )
+;; Any files that end in .v, .dv or .sv should be in verilog mode
+(add-to-list 'auto-mode-alist '("\\.[ds]?v\\'" . verilog-mode))
+;; Any files in verilog mode should have their keywords colorized
+(add-hook 'verilog-mode-hook '(lambda () (font-lock-mode 1)))
 
 ;;debug
 (setq tramp-verbose 10) 
