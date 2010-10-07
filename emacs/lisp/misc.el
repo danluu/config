@@ -84,3 +84,7 @@
 
 ;; If you are no Emacs-Lisp addict, and would like to use Tuareg NOW, append (or copy) `append-tuareg.el' file to your `.emacs' configuration file. It tells Emacs to load Tuareg and Sym-Lock (for XEmacs) automatically.
 (load-library "append-tuareg")
+
+;; load microcode files in assembler mode
+(setq auto-mode-alist (cons '("\\.nh" . asm-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.nmc" . asm-mode) auto-mode-alist))
