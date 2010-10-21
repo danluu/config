@@ -88,3 +88,9 @@
 ;; load microcode files in assembler mode
 (setq auto-mode-alist (cons '("\\.nh" . asm-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.nmc" . asm-mode) auto-mode-alist))
+
+;; ucf and ncf modes for emacs
+(setq auto-mode-alist (cons  '("\\.ucf\\'" . ucf-mode) auto-mode-alist))
+(setq auto-mode-alist (cons  '("\\.ncf\\'" . ucf-mode) auto-mode-alist))
+(add-hook 'ucf-mode-hook '(lambda () (font-lock-mode 1)))
+(autoload 'ucf-mode "ucf-mode")
