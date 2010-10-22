@@ -1,9 +1,9 @@
 ;; ucf-mode.el --- major mode for editing Xilinx user constraint file (UCF) 
 ;; in Emacs
 
-;; $Id: ucf-mode.el 3 2009-05-22 19:23:59Z ywu $
+;; $Id: ucf-mode.el 5 2010-10-22 03:16:05Z ywu $
 
-;; Copyright (C) 2006 Free Software Foundation, Inc.
+;; Copyright (C) 2007-2010 Jim Wu
 
 ;; Author: Jim Wu (jimwu88 at yahoo dot com)
 
@@ -14,7 +14,7 @@
 
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
 ;; You should have received a copy of the GNU General Public License
@@ -56,14 +56,14 @@
 (defconst ucf-font-lock-keywords-1
   (list 
    '("\\<\\(inst\\|net\\|pin\\|inst\\|loc\\|config\\|stepping\\|prohibit\\|dci_cascade\\|part\\)\\>" . font-lock-keyword-face)
-   '("\\<\\(tnm_net\\|tnm\\|timegrp\\|except\\|timespec\\|rising\\|falling\\)\\>" . font-lock-keyword-face)
+   '("\\<\\(tnm_net\\|tnm\\|tpthru\\|timegrp\\|except\\|timespec\\|rising\\|falling\\)\\>" . font-lock-keyword-face)
    '("\\<\\(period\\|high\\|input_jitter\\|feedback\\|priority\\)\\>" . font-lock-keyword-face)
-   '("\\<\\(offset\\|in\\|out\\|valid\\|before\\|after\\|from\\|to\\|datapathonly\\)\\>" . font-lock-keyword-face)
+   '("\\<\\(offset\\|in\\|out\\|valid\\|before\\|after\\|reference_pin\\|from\\|to\\|thru\\|datapathonly\\)\\>" . font-lock-keyword-face)
    '("\\<\\(maxdelay\\|maxskew\\|clock_dedicated_route\\|tig\\|bel\\|nodelay\\)\\>" . font-lock-keyword-face)
    '("\\<\\(area_group\\|range\\|compression\\|implement\\|group\\)\\>" . font-lock-keyword-face)
    '("\\<\\(keep_hierarchy\\|optimize\\|lock_pins\\|group\\)\\>" . font-lock-keyword-face)
    '("\\<\\(place\\|mode\\|u_set\\|route\\)\\>" . font-lock-keyword-face)
-   '("\\<\\(iostandard\\|drive\\|slew\\|diff_term\\|pullup\\|iobdelay\\)\\>" . font-lock-keyword-face)
+   '("\\<\\(iostandard\\|drive\\|slew\\|diff_term\\|out_term\\|pullup\\|iobdelay\\)\\>" . font-lock-keyword-face)
    '("\\<\\(bypass\\|iob\\)\\>" . font-lock-keyword-face)
    '("\\<\\(rloc_origin\\|hu_set\\|rloc\\)\\>" . font-lock-keyword-face)
    '("\\<\\(ffs\\)\\>" . font-lock-keyword-face)
@@ -195,7 +195,7 @@
 
   (set (make-local-variable 'font-lock-keywords-case-fold-search) t)
   (set-syntax-table ucf-mode-syntax-table)
-  (set (make-local-variable 'font-lock-defaults) '(ucf-font-lock-keywords))
+  (set (make-local-variable 'font-lock-defaults) '((ucf-font-lock-keywords) nil (font-lock-keywords-case-fold-search)))
 
   (or ucf-mode-map
       (ucf-setup-keymap))

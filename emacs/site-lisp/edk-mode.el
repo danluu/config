@@ -1,7 +1,7 @@
 ;; edk-mode.el --- major mode for editing Xilinx EDK files (MHS, MPD, etc)
 ;; in Emacs
 
-;; $Id: edk-mode.el 3 2009-05-22 19:23:59Z ywu $
+;; $Id: edk-mode.el 4 2009-11-02 20:28:45Z ywu $
 
 ;; Copyright (C) 2007 Jim Wu
 
@@ -101,7 +101,7 @@
 
   (set (make-local-variable 'font-lock-keywords-case-fold-search) t)
   (set-syntax-table edk-mode-syntax-table)
-  (set (make-local-variable 'font-lock-defaults) '(edk-font-lock-keywords))
+  (set (make-local-variable 'font-lock-defaults) '((edk-font-lock-keywords) nil (font-lock-keywords-case-fold-search)))
 
   (or edk-mode-map
       (edk-setup-keymap))
