@@ -94,3 +94,9 @@
 (setq auto-mode-alist (cons  '("\\.ncf\\'" . ucf-mode) auto-mode-alist))
 (add-hook 'ucf-mode-hook '(lambda () (font-lock-mode 1)))
 (autoload 'ucf-mode "ucf-mode")
+
+;; tab size
+(setq default-tab-width 2)
+
+;; don't make underscore a word boundary
+(modify-syntax-entry ?_ "w" text-mode-syntax-table) 
