@@ -100,3 +100,9 @@
 
 ;; don't make underscore a word boundary
 (modify-syntax-entry ?_ "w" text-mode-syntax-table) 
+
+;;multi-term
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+
+
