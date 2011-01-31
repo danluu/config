@@ -18,6 +18,17 @@
 	(add-path "emacs/site-lisp/haskell-mode")
 	(add-path "emacs/site-lisp/bluespec"))
 
+(if (eq system-type 'gnu/linux)
+		(labels ((add-path (p)
+											 (add-to-list 'load-path
+																		(concat "/usr/share/" p))))
+			(add-path "emacs/site-lisp")
+			(add-path "emacs/site-lisp/apel")
+			(add-path "emacs/site-lisp/llvm")
+			(add-path "emacs/site-lisp/w3m")
+			(add-path "emacs/site-lisp/bluespec"))
+)		
+
 (load-library "misc")
 
 ;;(if (eq system-type 'cygwin)
