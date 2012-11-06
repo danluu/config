@@ -17,7 +17,9 @@
 	(add-path "emacs/site-lisp/fsharp")
 	(add-path "emacs/site-lisp/tuareg")
 	(add-path "emacs/site-lisp/haskell-mode")
-	(add-path "emacs/site-lisp/bluespec"))
+	(add-path "emacs/site-lisp/bluespec")
+  (add-path "emacs/site-lisp/scala-emacs")
+	(add-path "emacs/site-list/ensime/elisp"))
 
 (if (eq system-type 'gnu/linux)
 		(labels ((add-path (p)
@@ -27,7 +29,9 @@
 			(add-path "emacs/site-lisp/apel")
 			(add-path "emacs/site-lisp/llvm")
 			(add-path "emacs/site-lisp/w3m")
-			(add-path "emacs/site-lisp/bluespec"))
+			(add-path "emacs/site-lisp/bluespec")
+      (add-path "emacs/site-lisp/scala-emacs")
+			(add-path "emacs/site-list/ensime/elisp"))
 )		
 
 (load-library "misc")
@@ -64,7 +68,15 @@
 
 
 ;;scala mode
-(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
+;(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
+(require 'scala-mode-auto)
+(add-hook 'scala-mode-hook
+					'(lambda ()
+						 (scala-mode-feature-electric-mode)
+						 ))
+
+;(require 'ensime)
+;(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;;haskell mode. Need to fix for multi-site support
 (load "~/emacs/site-lisp/haskell-mode/haskell-site-file")
