@@ -13,6 +13,7 @@
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
 	(add-path "emacs/site-lisp/scala")
+	(add-path "emacs/site-lisp/go")
 	(add-path "emacs/site-lisp/fsharp")
 	(add-path "emacs/site-lisp/tuareg")
 	(add-path "emacs/site-lisp/haskell-mode")
@@ -81,3 +82,7 @@
 
 ;;debug
 (setq tramp-verbose 10) 
+
+;;go mode
+(load "~/emacs/site-lisp/go/go-mode.el")
+(load "~/emacs/site-lisp/go/go-mode-load.el")

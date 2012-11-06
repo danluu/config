@@ -26,7 +26,7 @@
 (global-set-key "\M-g" 'goto-line)
 
 ;;tramp setup
-(setq tramp-default-method "rsync")
+;;(setq tramp-default-method "rsync")
 
  ;; Don't display the 'Welcome to GNU Emacs' buffer on startup
 (setq inhibit-startup-message t)
