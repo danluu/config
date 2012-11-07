@@ -42,6 +42,12 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+
+(setq backup-directory-alist
+			`((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+			`((".*" ,temporary-file-directory t)))
+
 ;;enable generic stuff like fstab mode
 (setq generic-define-unix-modes t)
 

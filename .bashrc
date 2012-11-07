@@ -132,3 +132,5 @@ unset TEMP
 if [ -f "$HOME/.ssh/sssha" ]; then
    source $HOME/.ssh/sssha
 fi
+
+#export TERM=xterm-256color
