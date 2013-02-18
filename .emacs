@@ -2,10 +2,11 @@
 
 
 (defvar emacs-root (if (eq system-type 'cygwin) "/home/d/"
+		     (if (eq system-type 'darwin) "/Users/danluu/"
 		       (if (or
 			    (eq system-type 'gnu/linux)
 			    (eq system-type 'linux))
-			   "/home/dluu/" "c:/home/d/")))
+			   "/home/dluu/" "c:/home/d/"))))
 		     
 (labels ((add-path (p)
 	 (add-to-list 'load-path
