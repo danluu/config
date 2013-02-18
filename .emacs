@@ -2,11 +2,12 @@
 
 
 (defvar emacs-root (if (eq system-type 'cygwin) "/home/d/"
-		     (if (eq system-type 'darwin) "/Users/danluu/"
 		       (if (or
 			    (eq system-type 'gnu/linux)
 			    (eq system-type 'linux))
-			   "/home/dluu/" "c:/home/d/"))))
+			   "/home/dluu" "c:/home/d/")))
+
+(defvar emacs-root "/Users/danluu/")
 		     
 (labels ((add-path (p)
 	 (add-to-list 'load-path
@@ -26,14 +27,28 @@
 		(labels ((add-path (p)
 											 (add-to-list 'load-path
 																		(concat "/usr/share/" p))))
-			(add-path "emacs/site-lisp")
+	(add-path "emacs/lisp")
+	(add-path "emacs/site-lisp")
+	(add-path "emacs/site-lisp/scala")
+	(add-path "emacs/site-lisp/go")
+	(add-path "emacs/site-lisp/fsharp")
+	(add-path "emacs/site-lisp/tuareg")
+	(add-path "emacs/site-lisp/haskell-mode")
+	(add-path "emacs/site-lisp/bluespec")
+  (add-path "emacs/site-lisp/scala-emacs")
 			(add-path "emacs/site-lisp/apel")
 			(add-path "emacs/site-lisp/llvm")
 			(add-path "emacs/site-lisp/w3m")
 			(add-path "emacs/site-lisp/bluespec")
-      (add-path "emacs/site-lisp/scala-emacs")
 			(add-path "emacs/site-lisp/ensime/elisp"))
 )		
+
+    (let ((default-directory "~/emacs/lisp"))
+      (normal-top-level-add-subdirs-to-load-path))
+
+    (let ((default-directory "~/emacs/site-lisp"))
+      (normal-top-level-add-subdirs-to-load-path))
+
 
 (load-library "misc")
 
