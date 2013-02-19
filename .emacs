@@ -49,6 +49,13 @@
     (let ((default-directory "~/emacs/site-lisp"))
       (normal-top-level-add-subdirs-to-load-path))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(require 'scala-mode2)
+
+
 
 (load-library "misc")
 
@@ -85,14 +92,14 @@
 
 ;;scala mode
 ;(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
-(require 'scala-mode-auto)
-(add-hook 'scala-mode-hook
-					'(lambda ()
-						 (scala-mode-feature-electric-mode)
-						 ))
+;(require 'scala-mode-auto)
+;(add-hook 'scala-mode-hook
+;					'(lambda ()
+;						 (scala-mode-feature-electric-mode)
+;						 ))
 
 ;;ensime for scala
-(require 'scala-mode)
+;(require 'scala-mode)
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 

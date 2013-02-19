@@ -39,3 +39,4 @@ fi
 #   INFOPATH=${HOME}/info:${INFOPATH}
 # fi
 
+export SBT_OPTS=-XX:MaxPermSize=512m
