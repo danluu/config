@@ -94,11 +94,11 @@
 
 ;;scala mode
 ;(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
-;(require 'scala-mode-auto)
-;(add-hook 'scala-mode-hook
-;					'(lambda ()
-;						 (scala-mode-feature-electric-mode)
-;						 ))
+(require 'scala-mode-auto)
+(add-hook 'scala-mode-hook
+					'(lambda ()
+						 (scala-mode-feature-electric-mode)))
+
 
 ;;ensime for scala
 ;(require 'scala-mode)
@@ -120,20 +120,22 @@
 (add-hook 'verilog-mode-hook '(lambda () (font-lock-mode 1)))
 
 ;;debug
-(setq tramp-verbose 10) 
+;(setq tramp-verbose 10) 
 
 ;;go mode
-(load "~/emacs/site-lisp/go/go-mode.el")
-(load "~/emacs/site-lisp/go/go-mode-load.el")
+;(load "~/emacs/site-lisp/go/go-mode.el")
+;(load "~/emacs/site-lisp/go/go-mode-load.el")
 
 ;;octave
-(autoload 'octave-mode "octave-mod" nil t)
-(setq auto-mode-alist
-      (cons '("\\.m$" . octave-mode) auto-mode-alist))
+;(autoload 'octave-mode "octave-mod" nil t)
+;(setq auto-mode-alist
+;      (cons '("\\.m$" . octave-mode) auto-mode-alist))
 
-(add-hook 'octave-mode-hook
-          (lambda ()
-            (abbrev-mode 1)
-            (auto-fill-mode 1)
-            (if (eq window-system 'x)
-                (font-lock-mode 1))))
+;(add-hook 'octave-mode-hook
+;          (lambda ()
+;            (abbrev-mode 1)
+;            (auto-fill-mode 1)
+;            (if (eq window-system 'x)
+;                (font-lock-mode 1))))
+
+
