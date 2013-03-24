@@ -90,14 +90,14 @@
 
 
 ;scala mode
-;(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
-;(require 'scala-mode-auto)
-;(add-hook 'scala-mode-hook
-;					'(lambda ()
-;						 (scala-mode-feature-electric-mode)))
+(load "~/emacs/site-lisp/scala/scala-mode-auto.el")
+(require 'scala-mode-auto)
+(add-hook 'scala-mode-hook
+					'(lambda ()
+						 (scala-mode-feature-electric-mode)))
 
 
-(require 'scala-mode2)
+;(require 'scala-mode2)
 
 ;;ensime for scala
 ;(require 'scala-mode)
