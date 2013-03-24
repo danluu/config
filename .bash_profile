@@ -39,4 +39,9 @@ fi
 #   INFOPATH=${HOME}/info:${INFOPATH}
 # fi
 
+#put homebrew path in front of bin
+HOMEBREW=/usr/local/bin:/usr/local/sbin
+export PATH=$HOMEBREW:$PATH
+
 export SBT_OPTS=-XX:MaxPermSize=512m
+
