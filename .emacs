@@ -269,3 +269,7 @@
 
 ; rust mode
 (require 'rust-mode)
+
+; julia mode
+(load "~/emacs/site-lisp/julia-mode.el")
+(require 'julia-mode)
