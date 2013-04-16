@@ -22,6 +22,7 @@
 	(add-path "emacs/site-lisp/bluespec")
         (add-path "emacs/site-lisp/scala-emacs")
         (add-path "emacs/site-lisp/scala-mode2")
+        (add-path "emacs/site-lisp/rust")
 	(add-path "emacs/site-lisp/ensime/elisp"))
 
 (if (eq system-type 'gnu/linux)
@@ -38,6 +39,7 @@
 	(add-path "emacs/site-lisp/bluespec")
         (add-path "emacs/site-lisp/scala-emacs")
         (add-path "emacs/site-lisp/scala-mode2")
+        (add-path "emacs/site-lisp/rust")
 			(add-path "emacs/site-lisp/apel")
 			(add-path "emacs/site-lisp/llvm")
 			(add-path "emacs/site-lisp/w3m")
@@ -265,3 +267,5 @@
 ;(require 'multi-term)
 ;(setq multi-term-program "/bin/bash")
 
+; rust mode
+(require 'rust-mode)
