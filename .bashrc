@@ -134,5 +134,5 @@ if [ -f "$HOME/.ssh/sssha" ]; then
 fi
 
 #export TERM=xterm-256color
-eval `opam config -env`
+#eval `opam config -env`
 

@@ -46,8 +46,8 @@ export PATH=$HOMEBREW:$PATH
 export SBT_OPTS=-XX:MaxPermSize=512m
 
 # opam
-. /Users/danluu/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-eval `opam config env`
+#. /Users/danluu/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+#eval `opam config env`
 
 # julia
 export JULIA=/Users/danluu/dev/julia
