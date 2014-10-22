@@ -45,6 +45,8 @@ export PATH=$HOMEBREW:$PATH
 
 export SBT_OPTS=-XX:MaxPermSize=512m
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # opam
 #. /Users/danluu/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 #eval `opam config env`
@@ -52,3 +54,8 @@ export SBT_OPTS=-XX:MaxPermSize=512m
 # julia
 export JULIA=/Users/danluu/dev/julia
 export PATH=$JULIA:$PATH
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# added by Anaconda 1.8.0 installer
+export PATH="/Users/danluu/anaconda/bin:$PATH"

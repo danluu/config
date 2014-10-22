@@ -136,3 +136,8 @@ fi
 #export TERM=xterm-256color
 #eval `opam config -env`
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /Users/danluu/.travis/travis.sh ] && source /Users/danluu/.travis/travis.sh

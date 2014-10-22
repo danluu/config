@@ -273,3 +273,8 @@
 ; julia mode
 (load "~/emacs/site-lisp/julia-mode.el")
 (require 'julia-mode)
+
+; matlab / octave mode
+(add-to-list
+  'auto-mode-alist
+  '("\\.m$" . octave-mode))
