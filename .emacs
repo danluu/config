@@ -137,9 +137,9 @@
 ;;debug
 ;(setq tramp-verbose 10) 
 
-;;go mode
-;(load "~/emacs/site-lisp/go/go-mode.el")
-;(load "~/emacs/site-lisp/go/go-mode-load.el")
+;go mode
+(load "~/emacs/site-lisp/go/go-mode.el")
+(load "~/emacs/site-lisp/go/go-mode-load.el")
 
 ;;octave
 ;(autoload 'octave-mode "octave-mod" nil t)
