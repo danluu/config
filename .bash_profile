@@ -55,6 +55,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export JULIA=/Users/danluu/dev/julia
 export PATH=$JULIA:$PATH
 
+# go
+
+export GOPATH=/Users/danluu/dev/go
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # added by Anaconda 1.8.0 installer
