@@ -14,6 +14,7 @@
 			(concat emacs-root p))))
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
+	(add-path "emacs/site-lisp/auto-complete")
 	(add-path "emacs/site-lisp/scala")
 	(add-path "emacs/site-lisp/go")
 	(add-path "emacs/site-lisp/fsharp")
@@ -31,6 +32,7 @@
 																		(concat "/usr/share/" p))))
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
+	(add-path "emacs/site-lisp/auto-complete")
 	(add-path "emacs/site-lisp/scala")
 	(add-path "emacs/site-lisp/go")
 	(add-path "emacs/site-lisp/fsharp")
@@ -137,9 +139,22 @@
 ;;debug
 ;(setq tramp-verbose 10) 
 
-;go mode
+;;go mode
 (load "~/emacs/site-lisp/go/go-mode.el")
 (load "~/emacs/site-lisp/go/go-mode-load.el")
+
+; run gofmt on save. 
+(add-hook 'before-save-hook 'gofmt-before-save)
+
+; go autocomplete.
+(require 'go-autocomplete)
+
+(load "~/emacs/site-lisp/auto-complete/auto-complete-config.el")
+(load "~/emacs/site-lisp/auto-complete/auto-complete.el")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/emacs/site-lisp/auto-complete/dict")
+(require 'auto-complete)
+
 
 ;;octave
 ;(autoload 'octave-mode "octave-mod" nil t)
