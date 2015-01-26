@@ -7,14 +7,14 @@
 			    (eq system-type 'linux))
 			   "/home/dluu" "c:/home/d/")))
 
-(defvar emacs-root "/Users/danluu/")
+(defvar emacs-root "/Users/danluu/config/")
 		     
 (labels ((add-path (p)
 	 (add-to-list 'load-path
 			(concat emacs-root p))))
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
-	(add-path "emacs/site-lisp/auto-complete")
+	(add-path "emacs/site-lisp/company-mode")
 	(add-path "emacs/site-lisp/scala")
 	(add-path "emacs/site-lisp/go")
 	(add-path "emacs/site-lisp/fsharp")
@@ -32,7 +32,7 @@
 																		(concat "/usr/share/" p))))
 	(add-path "emacs/lisp")
 	(add-path "emacs/site-lisp")
-	(add-path "emacs/site-lisp/auto-complete")
+	(add-path "emacs/site-lisp/company-mode")
 	(add-path "emacs/site-lisp/scala")
 	(add-path "emacs/site-lisp/go")
 	(add-path "emacs/site-lisp/fsharp")
@@ -52,7 +52,7 @@
 ;    (let ((default-directory "~/emacs/lisp"))
 ;      (normal-top-level-add-subdirs-to-load-path))
 
-    (let ((default-directory "~/emacs/site-lisp"))
+    (let ((default-directory "~/config/emacs/site-lisp"))
       (normal-top-level-add-subdirs-to-load-path))
 
 ;(require 'package)
@@ -147,14 +147,12 @@
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ; go autocomplete.
-(require 'go-autocomplete)
+(load "~/emacs/site-lisp/company-mode/company.el")
+(load "~/emacs/site-lisp/company-mode/company-template.el")
+(require 'company)
 
-(load "~/emacs/site-lisp/auto-complete/auto-complete-config.el")
-(load "~/emacs/site-lisp/auto-complete/auto-complete.el")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/emacs/site-lisp/auto-complete/dict")
-(require 'auto-complete)
-
+(load "~/emacs/site-lisp/go/company-go.el")
+(require 'company-go)  
 
 ;;octave
 ;(autoload 'octave-mode "octave-mod" nil t)
