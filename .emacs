@@ -313,16 +313,16 @@
 ;(setq multi-term-program "/bin/bash")
 
 ; rust mode
-(require 'rust-mode)
+; (require 'rust-mode)
 
 ; julia mode
-(load "~/emacs/site-lisp/julia-mode.el")
-(require 'julia-mode)
+; (load "~/emacs/site-lisp/julia-mode.el")
+; (require 'julia-mode)
 
 ; matlab / octave mode
-(add-to-list
-  'auto-mode-alist
-  '("\\.m$" . octave-mode))
+; (add-to-list
+;  'auto-mode-alist
+;  '("\\.m$" . octave-mode))
 
 ; web mode (HTML)
 (load "~/emacs/site-lisp/web-mode.el")
@@ -335,3 +335,12 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+(defun unfill-paragraph (&optional region)
+  "Takes a multi-line paragraph and makes it into a single line of text."
+  (interactive (progn (barf-if-buffer-read-only) '(t)))
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil region)))
+
+(define-key global-map "\M-Q" 'unfill-paragraph)
